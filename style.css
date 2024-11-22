@@ -1,0 +1,374 @@
+/* Main styles */
+:root {
+    --barca-blue: #004D98;
+    --barca-red: #A50044;
+    --barca-gold: #EDBB00;
+    --dark-blue: #003366;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--barca-blue), var(--barca-red));
+    color: white;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* Header styles */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    text-align: center;
+    padding: 15px 0;
+}
+
+nav a {
+    color: var(--barca-gold);
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Match Results Section */
+#matches {
+    padding-top: 120px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.results-container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+}
+
+h2 {
+    color: var(--barca-gold);
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.match-result {
+    background: linear-gradient(45deg, var(--barca-blue), var(--barca-red));
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 60px 1fr 100px 1fr 60px;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.match-result:hover {
+    transform: translateY(-5px);
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.team-name {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.score {
+    color: var(--barca-gold);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.match-info {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--barca-gold);
+    font-size: 0.9em;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* History Section */
+#historia {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--barca-gold) var(--dark-blue);
+}
+
+#historia::-webkit-scrollbar {
+    height: 8px;
+}
+
+#historia::-webkit-scrollbar-track {
+    background: var(--dark-blue);
+    border-radius: 4px;
+}
+
+#historia::-webkit-scrollbar-thumb {
+    background: var(--barca-gold);
+    border-radius: 4px;
+}
+
+.history-container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+    min-width: max-content;
+}
+
+.history-content {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+.history-card {
+    background: linear-gradient(45deg, var(--dark-blue), var(--barca-blue));
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    min-width: 300px;
+}
+
+.history-card:hover {
+    transform: translateY(-5px);
+}
+
+.history-card h3 {
+    color: var(--barca-gold);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.history-card p {
+    line-height: 1.6;
+    color: white;
+    text-align: justify;
+}
+
+/* Players Section */
+.players-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.players-container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.player-card {
+    background: linear-gradient(45deg, var(--dark-blue), var(--barca-blue));
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.player-card:hover {
+    transform: translateY(-10px);
+}
+
+.player-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--barca-gold);
+    box-shadow: 0 0 15px rgba(237, 187, 0, 0.3);
+}
+
+.player-card h3 {
+    color: var(--barca-gold);
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.player-number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--barca-gold);
+    color: var(--dark-blue);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.player-info {
+    margin-top: 15px;
+    text-align: left;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.player-info p {
+    margin: 5px 0;
+    color: white;
+    font-size: 0.9em;
+}
+
+/* Competition badges */
+.competition-badge {
+    background: var(--barca-gold);
+    color: var(--dark-blue);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .match-result {
+        grid-template-columns: 40px 1fr 80px 1fr 40px;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .team-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .team-name {
+        font-size: 0.9em;
+    }
+
+    .score {
+        font-size: 20px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    .history-card {
+        min-width: 250px;
+    }
+
+    .player-card img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .match-result {
+        grid-template-columns: 30px 1fr 60px 1fr 30px;
+        padding: 10px;
+    }
+
+    .team-logo {
+        width: 25px;
+        height: 25px;
+    }
+
+    .team-name {
+        font-size: 0.8em;
+    }
+
+    .score {
+        font-size: 18px;
+    }
+
+    .match-info {
+        font-size: 0.8em;
+    }
+
+    .history-card {
+        padding: 15px;
+        min-width: 200px;
+    }
+
+    .history-card h3 {
+        font-size: 1.1em;
+    }
+
+    .player-card {
+        padding: 15px;
+    }
+
+    .player-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .player-card h3 {
+        font-size: 1.2em;
+    }
+}
